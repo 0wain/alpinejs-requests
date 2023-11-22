@@ -33,7 +33,7 @@ Alpine.start()
 
 ```
 <html>
-    <script src="https://cdn.jsdelivr.net/npm/@owainjones/alpinejs-requests@1.x.x/dist/plugin.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs-requests@1.x.x/dist/plugin.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>
 ```
