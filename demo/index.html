@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script defer src="../dist/plugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+
+</head>
+<body>
+
+    <div x-data="{text: 'Make Post Request'}">
+        <button
+            type="button"
+
+            @click="text = 'Sending Post Request'"
+            @posted="text = 'Post Request Sent'"
+            x-post="{route: 'index.html'}"
+
+            x-text="text"
+        ></button>
+    </div>
+
+    <div x-data="{text: 'Make Post Request (Magic Style)'}">
+        <button
+            @click="$post({route: 'index.html'}); text = 'Sending Post Request';"
+            @posted="text = 'Post Request Sent'"
+
+            x-text="text"
+        ></button>
+    </div>
+
+</body>
+</html>
