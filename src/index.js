@@ -38,7 +38,6 @@ const Plugin = function (Alpine) {
         console.log({el, method, route, headers, body});
         // Make the request
         fetch(route, {
-            // Maybe allow this to be dynamic in the future?
             method: method ?? "POST",
             headers,
             body
