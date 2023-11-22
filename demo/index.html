@@ -8,22 +8,64 @@
 </head>
 <body>
 
-    <div x-data="{text: 'Make Post Request'}">
+    <h1>Request</h1>
+    <div x-data="{text: 'Make Request'}">
         <button
             type="button"
 
-            @click="text = 'Sending Post Request'"
-            @posted="text = 'Post Request Sent'"
-            x-post="{route: 'index.html'}"
+            @click="text = 'Sending Request'"
+            @request="text = 'Request Sent'"
+            x-request="{route: 'index.html', method: 'PUT'}"
+
+            x-text="text"
+        ></button>
+    </div>
+    <div x-data="{text: 'Make Request (Magic Style)'}">
+        <button
+            @click="$request({route: 'index.html',  method: 'PUT'}); text = 'Sending Request';"
+            @request="text = 'Request Sent'"
 
             x-text="text"
         ></button>
     </div>
 
-    <div x-data="{text: 'Make Post Request (Magic Style)'}">
+    <h1>GET</h1>
+    <div x-data="{text: 'Make GET Request'}">
         <button
-            @click="$post({route: 'index.html'}); text = 'Sending Post Request';"
-            @posted="text = 'Post Request Sent'"
+            type="button"
+
+            @click="text = 'Sending GET Request'"
+            @get="text = 'GET Request Sent'"
+            x-get="index.html"
+
+            x-text="text"
+        ></button>
+    </div>
+    <div x-data="{text: 'Make GET Request (Magic Style)'}">
+        <button
+            @click="$post({route: 'index.html', method: 'GET'}); text = 'Sending GET Request';"
+            @get="text = 'GET Request Sent'"
+
+            x-text="text"
+        ></button>
+    </div>
+
+    <h1>POST</h1>
+    <div x-data="{text: 'Make POST Request'}">
+        <button
+            type="button"
+
+            @click="text = 'Sending POST Request'"
+            @post="text = 'POST Request Sent'"
+            x-post="{route: 'index.html'}"
+
+            x-text="text"
+        ></button>
+    </div>
+    <div x-data="{text: 'Make POST Request (Magic Style)'}">
+        <button
+            @click="$post({route: 'index.html', method: 'POST'}); text = 'Sending POST Request';"
+            @post="text = 'POST Request Sent'"
 
             x-text="text"
         ></button>
