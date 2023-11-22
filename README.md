@@ -53,7 +53,7 @@ If required, additional data can be passed through the `x-post` diective.
 ```
 <button
     type="button"
-    x-post="{route: 'index.html', body: {stars: 3}, headers: {}}"
+    x-post="{route: '/api/videos/4/like', body: {stars: 3}, headers: {}}"
 >Like</button>
 ```
 
@@ -63,7 +63,7 @@ You can also access a "state" variable with `$event.detail.state`. This will be 
 ```
 <button
     type="button"
-    x-post="{route: 'index.html', body: {stars: 3}}"
+    x-post="{route: '/api/videos/4/like', body: {stars: 3}}"
     @post="liked = true;"
     x-text="liked ? 'Liked' : 'Like'"
 ></button>
@@ -103,3 +103,16 @@ There is also a `$get` magic method.
     <span x-text="views"></span> Views
 </p>
 ```
+
+### x-request
+
+`x-request` is the Alpine.js Request library in its freest form. It functions the same as `x-post` and `x-get`, but allows for the additional
+definition of a method. This means you can define which method to use, including things like DELETE, PATH ect.
+```
+<button
+    type="button"
+    x-request="{route: '/api/videos/4', method: 'DELETE'}"
+>Delete</button>
+```
+
+You can also use the magic method `$request`.
