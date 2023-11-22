@@ -1,6 +1,6 @@
 {
-  "name": "@owainjones/alpinejs-requests",
-  "version": "1.0.0",
+  "name": "alpinejs-requests",
+  "version": "1.0.2",
   "description": "Inline HTTP requests made simple for Alpine.js",
   "main": "dist/plugin.cjs.js",
   "module": "dist/plugin.esm.js",

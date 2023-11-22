@@ -15,14 +15,14 @@ For example, you could use this package to easily send a POST request when a use
 Install the package with the following command:
 
 ```
-npm i <notyetsetup>
+npm i alpinejs-requests
 ```
 
 Import and register the package:
 
 ```
 import Alpine from 'alpinejs'
-import requests from '@owainjones74/alpinejs-requests'
+import requests from 'alpinejs-requests'
 
 Alpine.plugin(requests)
 
@@ -33,7 +33,7 @@ Alpine.start()
 
 ```
 <html>
-    <script src="<notyetsetup>" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@owainjones/alpinejs-requests@1.x.x/dist/plugin.min.js" defer></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>
 ```
