@@ -1,4 +1,4 @@
-# 🌲 Alpine.js Requests ✉️
+# 🌲✉️ Alpine.js Requests
 
 ✉️ Inline HTTP requests made simple for 🌲 Alpine.js
 
@@ -46,12 +46,13 @@ Alpine.start()
 
 In it's simplest form, you can pass a string that will be used as the URL to send the POST request to.
 ```
-<button x-post="/api/videos/4/like">Like</button>
+<button type="button" x-post="/api/videos/4/like">Like</button>
 ```
 
 If required, additional data can be passed through the `x-post` diective.
 ```
 <button
+    type="button"
     x-post="{route: 'index.html', body: {stars: 3}, headers: {}}"
 >Like</button>
 ```
@@ -61,6 +62,7 @@ This event is called once the request has resolved. You can access the response 
 You can also access a "state" variable with `$event.detail.state`. This will be true/false depending on the success of the request.
 ```
 <button
+    type="button"
     x-post="{route: 'index.html', body: {stars: 3}}"
     @post="liked = true;"
     x-text="liked ? 'Liked' : 'Like'"
@@ -71,6 +73,7 @@ A magic method of `$post` is also provided. This is useful for making quick requ
 ```
 <div x-init="$request('/api/videos/4/view');"></div>
 <button
+    type="button"
     @click="$request({route: '/api/videos/4/like', body: {stars: 3}})"
 >Like</button>
 ```
