@@ -1,12 +1,12 @@
 {
-  "name": "@victoryoalli/alpinejs-plugin-blueprint",
+  "name": "@owainjones74/alpinejs-requests",
   "version": "1.0.0",
-  "description": "Super alpine.js plugin",
+  "description": "Easy HTTP requests for Alpine.js",
   "main": "dist/plugin.cjs.js",
   "module": "dist/plugin.esm.js",
   "unpkg": "dist/plugin.min.js",
-  "keywords": [],
-  "author": "Victor Yoalli",
+  "keywords": ["Alpinejs", "alpine", "HTTP"],
+  "author": "Owain Jones",
   "license": "MIT",
   "dependencies": {
     "esbuild": "^0.12.22"
