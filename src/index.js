@@ -44,25 +44,33 @@ const Plugin = function (Alpine) {
         }).then((response) => {
             // Trigger the @request event.
             el.dispatchEvent(new CustomEvent('request', {
-                state:'success',
-                response
+                detail: {
+                    state:'success',
+                    response
+                }
             }))
             // Trigger the @ event.
             el.dispatchEvent(new CustomEvent((method ?? 'post').toLowerCase(), {
-                state:'success',
-                response
+                detail: {
+                    state:'success',
+                    response
+                }
             }))
         }).catch((error) => {
             console.warn(error);
             // Trigger the @request event.
             el.dispatchEvent(new CustomEvent('request', {
-                state:'error',
-                response
+                detail: {
+                    state:'error',
+                    response
+                }
             }))
             // Trigger the @ event.
             el.dispatchEvent(new CustomEvent((method ?? 'post').toLowerCase(), {
-                state:'error',
-                response
+                detail: {
+                    state:'error',
+                    response
+                }
             }))
         })
     }

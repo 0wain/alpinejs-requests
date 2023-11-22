@@ -38,22 +38,36 @@ var Plugin = function(Alpine) {
       body
     }).then((response2) => {
       el.dispatchEvent(new CustomEvent("request", {
-        state: "success",
-        response: response2
+        detail: {
+          state: "success",
+          response: response2
+        }
       }));
       el.dispatchEvent(new CustomEvent((method ?? "post").toLowerCase(), {
-        state: "success",
-        response: response2
+        detail: {
+          state: "success",
+          response: response2
+        }
       }));
+      console.log({
+        detail: {
+          state: "success",
+          response: response2
+        }
+      });
     }).catch((error) => {
       console.warn(error);
       el.dispatchEvent(new CustomEvent("request", {
-        state: "error",
-        response
+        detail: {
+          state: "error",
+          response
+        }
       }));
       el.dispatchEvent(new CustomEvent((method ?? "post").toLowerCase(), {
-        state: "error",
-        response
+        detail: {
+          state: "error",
+          response
+        }
       }));
     });
   }
