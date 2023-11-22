@@ -49,12 +49,6 @@ var Plugin = function(Alpine) {
           response: response2
         }
       }));
-      console.log({
-        detail: {
-          state: "success",
-          response: response2
-        }
-      });
     }).catch((error) => {
       console.warn(error);
       el.dispatchEvent(new CustomEvent("request", {
