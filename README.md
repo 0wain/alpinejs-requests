@@ -39,3 +39,38 @@ Alpine.start()
 ```
 
 ## Documentation
+
+### x-post
+
+`x-post` allows you to easily create a POST request on the click event of a DOM element.
+
+In it's simplest form, you can pass a string that will be used as the URL to send the POST request to.
+```
+<button x-post="/api/videos/4/like">Like</button>
+```
+
+If required, additional data can be passed through the `x-post` diective.
+```
+<button
+    x-post="{route: 'index.html', body: {stars: 3}, headers: {}}"
+>Like</button>
+```
+
+If you want to use the response from the POST request, you can access this through the `@post` event.
+This event is called once the request has resolved. You can access the response object with `$event.detail.response`.
+You can also access a "state" variable with `$event.detail.state`. This will be true/false depending on the success of the request.
+```
+<button
+    x-post="{route: 'index.html', body: {stars: 3}}"
+    @post="liked = true;"
+    x-text="liked ? 'Liked' : 'Like'"
+></button>
+```
+
+A magic method of `$post` is also provided. This is useful for making quick requests inside other events.
+```
+<div x-init="$request('/api/videos/4/view');"></div>
+<button
+    @click="$request({route: '/api/videos/4/like', body: {stars: 3}})"
+>Like</button>
+```
