@@ -77,3 +77,29 @@ A magic method of `$post` is also provided. This is useful for making quick requ
     @click="$request({route: '/api/videos/4/like', body: {stars: 3}})"
 >Like</button>
 ```
+
+### x-get
+
+`x-get` works essentially identially to `x-post`. Rather obviously, the only difference is that it makes a GET request instead of a POST request.
+The functionality is identical in what can be passed to an `x-get`, and how the system resolves it. Something to note is that the event for a GET request
+lands in the @get event.
+```
+<button
+    type="button"
+    x-get="/api/videos/4/refresh"
+    @get="views = $event.detail.response.body"
+>
+    <span x-text="views"></span> Views
+</button>
+```
+
+There is also a `$get` magic method.
+```
+<div
+    x-init="$get('/api/videos/4/info');"
+    @get="views = $event.detail.response.json().views"
+></div>
+<p>
+    <span x-text="views"></span> Views
+</p>
+```
