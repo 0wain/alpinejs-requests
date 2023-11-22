@@ -13,9 +13,18 @@ const Plugin = function (Alpine) {
         },
     ]
 
+    // Regiter all the aliases
     methods.forEach((type) => {
         Alpine.directive(type.directive, (el, { expression }, { evaluate, cleanup }) => {
-            directiveSetup({el, method: type.method, expression, evaluate})
+            let data = evalExpression(expression, evaluate);
+
+            el.addEventListener('click', () => {
+                processRequest({
+                    el,
+                    method: type.method,
+                    ...data
+                });
+            })
             cleanup(() => observer.disconnect())
         })
         Alpine.magic(type.directive, (el, { evaluate }) => expression =>{
@@ -24,19 +33,6 @@ const Plugin = function (Alpine) {
         })
     });
 
-
-
-    function directiveSetup({el, method, expression, evaluate}) {
-        let data = evalExpression(expression, evaluate);
-
-        el.addEventListener('click', () => {
-            processRequest({
-                el,
-                method,
-                ...data
-            });
-        })
-    }
 
     function processRequest({el, method, route, headers, body}) {
         console.log({el, method, route, headers, body});
@@ -72,6 +68,7 @@ const Plugin = function (Alpine) {
         })
     }
 
+    // Used to convert input string to object
     function evalExpression(expression, evaluate) {
         let data = {}
 
