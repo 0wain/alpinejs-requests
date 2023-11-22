@@ -1,6 +1,6 @@
-# Alpine.js Requests
+# 🌲 Alpine.js Requests ✉️
 
-Inline HTTP made simple for Alpinejs
+✉️ Inline HTTP requests made simple for 🌲 Alpine.js
 
 ## What is Alpine.js Requests?
 
