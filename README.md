@@ -6,7 +6,7 @@
 
 Alpine.js Requests aims to make HTTP requests easy within Alpine.
 The main use case for this package is for simple requests actions that do not require advance responses.
-For example, you could use this package to easily send a POST requst when a user presses the like button.
+For example, you could use this package to easily send a POST request when a user presses the like button.
 
 ## Install
 
@@ -44,12 +44,12 @@ Alpine.start()
 
 `x-post` allows you to easily create a POST request on the click event of a DOM element.
 
-In it's simplest form, you can pass a string that will be used as the URL to send the POST request to.
+In its simplest form, you can pass a string that will be used as the URL to send the POST request to.
 ```
 <button type="button" x-post="/api/videos/4/like">Like</button>
 ```
 
-If required, additional data can be passed through the `x-post` diective.
+If required, additional data can be passed through the `x-post` directive.
 ```
 <button
     type="button"
@@ -80,7 +80,7 @@ A magic method of `$post` is also provided. This is useful for making quick requ
 
 ### x-get
 
-`x-get` works essentially identially to `x-post`. Rather obviously, the only difference is that it makes a GET request instead of a POST request.
+`x-get` works essentially identically to `x-post`. Rather obviously, the only difference is that it makes a GET request instead of a POST request.
 The functionality is identical in what can be passed to an `x-get`, and how the system resolves it. Something to note is that the event for a GET request
 lands in the @get event.
 ```
