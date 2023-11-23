@@ -2,6 +2,8 @@
 
 ✉️ Inline HTTP requests made simple for Alpine.js 🌲
 
+https://www.npmjs.com/package/alpinejs-requests
+
 ## What is Alpine.js Requests?
 
 Alpine.js Requests aims to make HTTP requests easy within Alpine.

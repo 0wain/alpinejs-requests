@@ -1,12 +1,13 @@
 {
   "name": "alpinejs-requests",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Inline HTTP requests made simple for Alpine.js",
   "main": "dist/plugin.cjs.js",
   "module": "dist/plugin.esm.js",
   "unpkg": "dist/plugin.min.js",
   "keywords": ["Alpinejs", "alpine", "HTTP"],
   "author": "Owain Jones",
+  "repository": "https://github.com/owainjones74/alpinejs-requests.git",
   "license": "MIT",
   "dependencies": {
     "esbuild": "^0.12.22"
