@@ -73,10 +73,10 @@ You can also access a "state" variable with `$event.detail.state`. This will be 
 
 A magic method of `$post` is also provided. This is useful for making quick requests inside other events.
 ```
-<div x-init="$request('/api/videos/4/view');"></div>
+<div x-init="$post('/api/videos/4/view');"></div>
 <button
     type="button"
-    @click="$request({route: '/api/videos/4/like', body: {stars: 3}})"
+    @click="$post({route: '/api/videos/4/like', body: {stars: 3}})"
 >Like</button>
 ```
 
