@@ -54,7 +54,10 @@ var Plugin = function(Alpine) {
     });
     Alpine.magic(type.directive, (el, { evaluate }) => (expression) => {
       let data = evalExpression(expression, evaluate);
-      processRequest(__spreadValues({ el }, data));
+      processRequest(__spreadValues({
+        el,
+        method: type.method
+      }, data));
     });
   });
   function processRequest({ el, method, route, headers, body }) {

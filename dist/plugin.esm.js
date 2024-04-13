@@ -27,7 +27,11 @@ var Plugin = function(Alpine) {
     });
     Alpine.magic(type.directive, (el, { evaluate }) => (expression) => {
       let data = evalExpression(expression, evaluate);
-      processRequest({ el, ...data });
+      processRequest({
+        el,
+        method: type.method,
+        ...data
+      });
     });
   });
   function processRequest({ el, method, route, headers, body }) {
