@@ -6,7 +6,7 @@ https://www.npmjs.com/package/alpinejs-requests
 
 ## What is Alpine.js Requests?
 
-Alpine.js Requests aims to make HTTP requests easy within Alpine.
+Alpine.js Requests aims to make HTTP requests easy within Alpine, allowing you to send AJAX requests without thinking twice.
 The main use case for this package is for simple requests actions that do not require advance responses.
 For example, you could use this package to easily send a POST request when a user presses the like button.
 
