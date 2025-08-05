@@ -39,7 +39,6 @@ const Plugin = function (Alpine) {
 
 
     function processRequest({el, method, route, headers, body}) {
-        console.log({el, method, route, headers, body});
         // Make the request
         fetch(route, {
             method: method ?? "POST",
